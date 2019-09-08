@@ -12,7 +12,7 @@ jobs:
     steps:
       - checkout
       - run: echo "A more familiar hi"
-  deploy_docs:
+  docs_build:
     docker:
       - image: circleci/python:3.7.3
     steps:
@@ -24,6 +24,22 @@ jobs:
       - persist_to_workspace:
           root: docs/build
           paths: html
+  docs_deploy:
+    docker:
+      - image: node:8.10.0
+    steps:
+      - checkout
+      - attach_workspace:
+          at: docs/build
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --silent gh-pages@2.0.1
+            git config user.email ""
+            git config user.name "ci-build"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --dist docs/build/html
 
 workflows:
   version: 2
@@ -31,7 +47,7 @@ workflows:
     jobs:
       - pylint
       - test
-      - deploy_docs:
+      - docs_build:
           requires:
             - pylint
             - test
