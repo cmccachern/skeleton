@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    steps:
+      - checkout
+      - run:
+        name: Build
+        command: echo Building
+      - run:
+        name: pylint
+        command: echo "Running pylint"
+  test:
+    steps:
+      - checkout
+      - run: echo "Testing"
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test
