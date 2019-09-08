@@ -17,7 +17,7 @@ jobs:
       - image: circleci/python:3.7.3
     steps:
       - checkout
-      - run: echo "Building docs"
+      - run: make -C docs html
 
 workflows:
   version: 2
