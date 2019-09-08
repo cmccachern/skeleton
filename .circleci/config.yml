@@ -27,7 +27,8 @@ workflows:
       - test
       - deploy_docs:
           requires:
-            - build
+            - pylint
+            - test
           filters:
             branches:
               only: master 
