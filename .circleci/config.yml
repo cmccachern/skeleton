@@ -19,7 +19,7 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: pip install -r requirements.txt
+          command: pip install --upgrade pip && pip install -r requirements.txt
       - run: make -C docs html
       - persist_to_workspace:
           root: docs/build
