@@ -1,15 +1,8 @@
-version: 2
-jobs:
-  build:
-    steps:
-      - checkout
-      - run:
-        name: Build
-        command: echo Building
-      - run:
-        name: pylint
-        command: echo "Running pylint"
-  test:
-    steps:
-      - checkout
-      - run: echo "Testing"
+ version: 2
+ jobs:
+   build:
+     docker:
+       - image: circleci/ruby:2.4.1
+     steps:
+       - checkout
+       - run: echo "A first hello"
