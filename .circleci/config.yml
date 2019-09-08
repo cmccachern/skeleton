@@ -12,7 +12,7 @@
      steps:
        - checkout
        - run: echo "A more familiar hi"
-   deploy:
+   deploy_docs:
      docker:
        - image: circleci/python:3.7.3
      steps:
@@ -27,4 +27,4 @@
        - test
     deploy:
       jobs:
-        - deploy
+        - deploy_docs
