@@ -18,12 +18,12 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Install dependencies
-        command: pip install -r requirements.txt
+          name: Install dependencies
+          command: pip install -r requirements.txt
       - run: make -C docs html
       - persist_to_workspace:
-        root: docs/build
-        paths: html
+          root: docs/build
+          paths: html
 
 workflows:
   version: 2
