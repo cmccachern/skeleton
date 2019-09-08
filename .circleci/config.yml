@@ -51,6 +51,9 @@ workflows:
           requires:
             - pylint
             - test
+      - docs_deploy:
+          requires:
+            - docs_build
           filters:
             branches:
               only: master 
