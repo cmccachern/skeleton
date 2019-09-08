@@ -25,7 +25,4 @@
      jobs:
        - pylint
        - test
-       - deploy_docs:
-         requires:
-           - pylint
-           - test
+       - deploy_docs
