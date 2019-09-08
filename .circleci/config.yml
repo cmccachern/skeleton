@@ -1,31 +1,33 @@
- version: 2
- jobs:
-   pylint:
-     docker:
-       - image: circleci/python:3.7.3
-     steps:
-       - checkout
-       - run: echo "A first hello"
-   test:
-     docker:
-       - image: circleci/python:3.7.3
-     steps:
-       - checkout
-       - run: echo "A more familiar hi"
-   deploy_docs:
-     docker:
-       - image: circleci/python:3.7.3
-     steps:
-       - checkout
-       - run: echo "Building docs"
+version: 2
+jobs:
+  pylint:
+    docker:
+      - image: circleci/python:3.7.3
+    steps:
+      - checkout
+      - run: echo "A first hello"
+  test:
+    docker:
+      - image: circleci/python:3.7.3
+    steps:
+      - checkout
+      - run: echo "A more familiar hi"
+  deploy_docs:
+    docker:
+      - image: circleci/python:3.7.3
+    steps:
+      - checkout
+      - run: echo "Building docs"
 
- workflows:
-   version: 2
-   pylint_test_deploy:
-     jobs:
-       - pylint
-       - test
-       - deploy_docs:
-         requires:
-           - pylint
-           - test
+workflows:
+  version: 2
+  pylint_test_deploy:
+    jobs:
+      - pylint
+      - test
+      - deploy_docs:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master 
