@@ -21,8 +21,11 @@
 
  workflows:
    version: 2
-   pylint_and_test:
+   pylint_test_deploy:
      jobs:
        - pylint
        - test
        - deploy_docs
+         requires:
+           - pylint
+           - test
