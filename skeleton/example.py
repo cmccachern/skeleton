@@ -10,7 +10,8 @@ def sum_list(data):
 
     Each function should have a short description optionally followed, optionally by
     a longer description.  Docstrings should follow the numpydoc format.  For more
-    information, see the numpy docstring guide at https://numpydoc.readthedocs.io/en/latest/format.html.
+    information, see the numpy docstring guide at
+    https://numpydoc.readthedocs.io/en/latest/format.html.
 
 
     Parameters
@@ -24,7 +25,3 @@ def sum_list(data):
         Sum of input list
     """
     return np.sum(data)
-
-
-
-
