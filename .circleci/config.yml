@@ -5,7 +5,7 @@ jobs:
       - image: circleci/python:3.7.3
     steps:
       - checkout
-      - run: echo "A first hello"
+      - run: pylint skeleton 
   test:
     docker:
       - image: circleci/python:3.7.3
