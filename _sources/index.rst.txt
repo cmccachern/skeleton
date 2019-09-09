@@ -8,8 +8,8 @@ Welcome to skeleton's documentation!
     tutorials/index
     explanations/index
     howto/index
-    reference/skeleton
     resources/index
+    reference/modules
 
 
 
