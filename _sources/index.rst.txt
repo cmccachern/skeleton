@@ -8,7 +8,7 @@ Welcome to skeleton's documentation!
     tutorials/index
     explanations/index
     howto/index
-    reference/index
+    reference/skeleton
     resources/index
 
 
